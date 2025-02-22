@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--默认分割线大小-->
+    <dimen name="divider_size8_bas">8dp</dimen>
+
+    <!--shake 动画重复次数-->
+    <integer name="bas_shake_anim_cycles">3</integer>
+    <!--shake 动画持续时间-->
+    <integer name="bas_shake_anim_duration">500</integer>
+
+    <!--开始滚动的位置：-->
+    <attr name="alignFrom" format="flags">
+        <!--从左侧开始-->
+        <flag name="start" value="0" />
+        <!--从右侧开始-->
+        <flag name="end" value="1" />
+    </attr>
+
+    <declare-styleable name="MarqueeSurfaceView">
+        <attr name="android:textColor" />
+        <attr name="android:textSize" />
+        <attr name="android:text" />
+        <attr name="android:shadowDx"/>
+        <attr name="android:shadowDy"/>
+        <attr name="android:shadowColor"/>
+        <attr name="android:shadowRadius"/>
+        <!--默认自动开始-->
+        <attr name="autoStart" format="boolean" />
+        <!--帧率，默认30，建议不要太大，越大刷新越快-->
+        <attr name="fps" format="integer" />
+        <!--滚动步长，默认4px，值越大，单次滚动的距离越大-->
+        <attr name="scrollStep" format="integer" />
+        <!--文字滚动对齐-->
+        <attr name="alignFrom"/>
+
+    </declare-styleable>
+
+</resources>

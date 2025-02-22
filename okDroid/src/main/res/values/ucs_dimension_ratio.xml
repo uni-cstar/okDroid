@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--比如：16:9 4：3-->
+    <attr name="dimensionRatio" format="string" />
+
+    <attr name="mode" format="integer">
+        <enum name="onWidth" value="0" />
+        <enum name="onHeight" value="1" />
+    </attr>
+
+    <declare-styleable name="DimensionRatioView">
+        <attr name="mode" />
+        <attr name="dimensionRatio" />
+    </declare-styleable>
+
+    <!--引入属性，这样在xml中使用的时候才有属性自动补全-->
+    <declare-styleable name="DimensionRatioCardView">
+        <attr name="mode" />
+        <attr name="dimensionRatio" />
+    </declare-styleable>
+
+    <declare-styleable name="DimensionRatioFrameLayout">
+        <attr name="mode" />
+        <attr name="dimensionRatio" />
+    </declare-styleable>
+    <declare-styleable name="DimensionRatioLinearLayout">
+        <attr name="mode" />
+        <attr name="dimensionRatio" />
+    </declare-styleable>
+    <declare-styleable name="DimensionRatioImageView">
+        <attr name="mode" />
+        <attr name="dimensionRatio" />
+    </declare-styleable>
+
+</resources>

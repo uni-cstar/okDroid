@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主题文本颜色：通常为导航栏文本颜色-->
+    <color name="text_color_primary_bas">#FFFFFFFF</color>
+
+    <!--透明白色：用于主题需要透明白色的地方-->
+    <color name="bas_theme_opacity_white_view">@color/white_opacity_10</color>
+
+
+
+</resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!--图片圆角半径-->
+    <dimen name="ucs_image_corner_radius">6dp</dimen>
+
+    <!--半圆形圆角半径-->
+    <dimen name="ucs_semicircle_corner_radius">48dp</dimen>
+
+    <!--占位图颜色-->
+    <color name="ucs_image_placeholder_color">#26FFFFFF</color>
+
+</resources>

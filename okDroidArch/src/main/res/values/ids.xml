@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--FragmentContainerActivity所使用的fragment id-->
+    <item name="ucs_id_fragment_container" type="id" />
+
+</resources>

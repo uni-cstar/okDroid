@@ -1,0 +1,126 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+
+    /*用于上传maven*/
+    id 'com.vanniktech.maven.publish'
+}
+
+android {
+    namespace 'unics.okdroid'
+    compileSdkVersion 32
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    api 'androidx.core:core-ktx:1.7.0'
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api "androidx.activity:activity-ktx:1.4.0"
+    api "androidx.fragment:fragment-ktx:1.4.1"
+    api "com.google.android.material:material:1.6.1"
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    //permission: 个人权限处理框架
+    implementation 'halo.android:permission:1.0.5-rc'
+
+    /*核心：基础代码库*/
+    //todo 临时改为compileOnly，后面改为api
+//    api(project(":okCore"))
+    compileOnly 'io.github.uni-cstar:okCore:+'
+//    gradle.ext.depApiInert(this,'adapter-imageloader')
+//    debugApi project(path: ':adapter-imageloader')
+//    releaseApi(basDeps.adapterImageloader)
+
+//    gradle.ext.depApiInert(this,'systemui')
+//    debugApi project(path: ':systemui')
+//    releaseApi basDeps.systemui
+
+    /*lifecycle */
+    def lifecycle_version = "2.4.1"
+    api "androidx.lifecycle:lifecycle-viewmodel:${lifecycle_version}"
+    /**
+     *  [Lifecycle-ViewModel]
+     *  https://developer.android.google.cn/jetpack/androidx/releases/lifecycle
+     */
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:${lifecycle_version}"
+    /**
+     *  [Lifecycle-LiveData]
+     *  https://developer.android.google.cn/jetpack/androidx/releases/lifecycle
+     */
+    api "androidx.lifecycle:lifecycle-livedata:${lifecycle_version}"
+    /**
+     * Lifecycles only (without ViewModel or LiveData)
+     *
+     * lifecycle-runtime-ktx 给每个 LifeCycle 对象通过扩展属性定义了协程作用域 lifecycleScope
+     * https://www.cnblogs.com/bingxinshuo/archive/2019/10/21/11717209.html
+     */
+    api "androidx.lifecycle:lifecycle-runtime-ktx:${lifecycle_version}"
+
+
+    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:${lifecycle_version}"
+    /*必备组件 JetPack系列 END*/
+
+    def glide_version = "4.13.2"
+    /**
+     *  Glide
+     *  <proguard>已添加混淆规则
+     *  https://github.com/bumptech/glide
+     *  https://muyangmin.github.io/glide-docs-cn/doc/download-setup.html
+     * Min Sdk Version - 使用 Glide 需要 min SDK 版本 API 14 (Ice Cream Sandwich) 或更高。
+     * Compile Sdk Version - Glide 必须使用 API 27 (Oreo MR1) 或更高版本的 SDK 来编译。+-
+     * Support Library Version - Glide 使用的支持库版本为 27。
+     */
+    api("com.github.bumptech.glide:glide:$glide_version") {
+        exclude group: "com.android.support"
+    }
+
+    /*本库未用到compiler*/
+//    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    /**
+     *  Glide OkHttp集成库
+     *  将使 Glide 自动开始使用 OkHttp 来加载所有来自 http 和 https URL 的图片
+     */
+    implementation("com.github.bumptech.glide:okhttp-integration:$glide_version") {
+        exclude group: "com.squareup.okhttp3", module: "okhttp"
+    }
+
+
+    implementation 'halo.android:permission:1.0.5-rc'
+
+    //依赖zxing编译，提供二维码生成能力方法，使用时需要用户自行依赖zxing库
+    compileOnly('com.google.zxing:core:3.5.2')
+
+}
+

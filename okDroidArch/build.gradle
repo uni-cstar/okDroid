@@ -1,0 +1,101 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+android {
+    namespace 'unics.okdroidarch'
+    compileSdkVersion 32
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //permission: 个人权限处理框架
+    implementation 'halo.android:permission:1.0.5-rc'
+
+    //todo 临时增加在这里，后面删除这个
+//    api(project(":okCore"))
+    compileOnly 'io.github.uni-cstar:okCore:+'
+    //核心：android 工具库
+    api project(":okDroid")
+    //核心：多状态视图管理
+    api 'io.github.uni-cstar:okMultiState:0.0.3'
+    //核心：系统状态栏相关逻辑（沉浸式状态栏或地步导航栏）
+    implementation 'io.github.uni-cstar:okSysBar:1.0.3'
+
+    api 'androidx.core:core-ktx:1.7.0'
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api "com.google.android.material:material:1.6.1"
+
+
+    /*Kotlin*/
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20"
+    /*
+    * Kotlin-协程
+    * https://github.com/hltj/kotlinx.coroutines-cn/blob/master/README.md#using-in-your-projects
+    * https://github.com/hltj/kotlinx.coroutines-cn/blob/master/README.md#using-in-your-projects
+    * */
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+//
+//    /*START - retrofit*/
+//    /**
+//     *  [Retrofit]  Http客户端实现
+//     *  <proguard>
+//     *  https://github.com/square/retrofit
+//     *      间接引入：
+//     *       [OkHttp] <proguard>
+//     *       [Okio] <proguard>
+//     *  Retrofit requires at minimum Java 8+ or Android API 21+.
+//     *  高版本只支持ApiLevel 21；
+//     *  支持到4.4 retrofit + okhttp的版本不能太高：okhttp3_version = "3.14.4" retrofit_version = "2.7.1"
+//     */
+//    api "com.squareup.retrofit2:retrofit:$retrofit_version"
+//
+//    /**
+//     *  [logging-interceptor] okhttp请求日志打印拦截器，版本号与okhttp版本一致
+//     *  https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
+//     */
+//    api "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+//
+//    /**
+//     *  [Retrofit Converter Gson] 使用Gson作为Retrofit的序列化和反序列化工具
+//     *  <proguard>
+//     *  https://github.com/square/retrofit/wiki/Converters
+//     *  https://github.com/google/gson
+//     */
+//    compileOnly "com.squareup.retrofit2:converter-gson:$retrofit_version"
+//
+//    compileOnly "com.squareup.retrofit2:converter-jackson:$retrofit_version"
+//
+//    compileOnly 'org.ligboy.retrofit2:converter-fastjson:2.0.2'
+//
+//    /*END - Retrofit*/
+
+}

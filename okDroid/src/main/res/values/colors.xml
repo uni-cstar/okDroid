@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="black_opacity_90" tools:ignore="ResourceName">#E6000000</color>
+    <color name="black_opacity_80" tools:ignore="ResourceName">#CC000000</color>
+    <color name="black_opacity_70" tools:ignore="ResourceName">#B2000000</color>
+    <color name="black_opacity_60" tools:ignore="ResourceName">#99000000</color>
+    <color name="black_opacity_50" tools:ignore="ResourceName">#7F000000</color>
+    <color name="black_opacity_40" tools:ignore="ResourceName">#66000000</color>
+    <color name="black_opacity_30" tools:ignore="ResourceName">#4D000000</color>
+    <color name="black_opacity_20" tools:ignore="ResourceName">#33000000</color>
+    <color name="black_opacity_10" tools:ignore="ResourceName">#19000000</color>
+
+    <color name="white_opacity_90" tools:ignore="ResourceName">#E6FFFFFF</color>
+    <color name="white_opacity_70" tools:ignore="ResourceName">#B2FFFFFF</color>
+    <color name="white_opacity_60" tools:ignore="ResourceName">#99FFFFFF</color>
+    <color name="white_opacity_50" tools:ignore="ResourceName">#7FFFFFFF</color>
+    <color name="white_opacity_40" tools:ignore="ResourceName">#66FFFFFF</color>
+    <color name="white_opacity_30" tools:ignore="ResourceName">#4DFFFFFF</color>
+    <color name="white_opacity_20" tools:ignore="ResourceName">#33FFFFFF</color>
+    <color name="white_opacity_15" tools:ignore="ResourceName">#26FFFFFF</color>
+    <color name="white_opacity_10" tools:ignore="ResourceName">#19FFFFFF</color>
+
+</resources>

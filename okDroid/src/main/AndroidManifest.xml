@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+
+        <!--配置FileProvider支持-->
+        <provider
+            android:name=".tools.content.FileProviderCompat"
+            android:authorities="${applicationId}.FileProviderCompat"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_provider_compat_files_path_bas" />
+        </provider>
+
+        <!--如果需要更改ui mode 则后续依赖的module采用replace node的形式替换本节点-->
+        <!-- <meta-data
+             android:name="@string/bas_ui_mode"
+             android:value="@integer/bas_ui_mode_undefined"
+             tools:node="replace"/>-->
+        <meta-data
+            android:name="@string/bas_ui_mode"
+            android:value="@integer/bas_ui_mode_undefined" />
+
+    </application>
+
+</manifest>

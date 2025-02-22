@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="ucs_anim_tag_shake_x" type="id"/>
+    <item name="ucs_anim_tag_shake_y" type="id"/>
+    <item name="ucs_anim_tag_resize" type="id"/>
+    <item name="ucs_anim_tag_resize_width" type="id"/>
+    <item name="ucs_anim_tag_resize_height" type="id"/>
+
+    <item name="ucs_id_extra_coordinator_effect_in_anim" type="id"/>
+    <item name="ucs_id_extra_coordinator_effect_out_anim" type="id"/>
+
+</resources>
