@@ -56,6 +56,7 @@ abstract class FragmentArch : Fragment, MultiStateUserUi, RefresherUserUi {
                 contentView = it
             }
         } else {
+            hasCallInitView = false
             createContentViewInternal(inflater, container, savedInstanceState)
         }
     }

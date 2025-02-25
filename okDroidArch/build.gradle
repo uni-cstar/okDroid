@@ -41,7 +41,7 @@ dependencies {
 
     //todo 临时增加在这里，后面删除这个
 //    api(project(":okCore"))
-    compileOnly 'io.github.uni-cstar:okCore:+'
+    compileOnly 'io.github.uni-cstar:okCore:0.0.3'
     //核心：android 工具库
     api project(":okDroid")
     //核心：多状态视图管理
