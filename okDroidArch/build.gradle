@@ -45,7 +45,7 @@ dependencies {
     //核心：android 工具库
     api project(":okDroid")
     //核心：多状态视图管理
-    api 'io.github.uni-cstar:okMultiState:0.0.3'
+    api 'io.github.uni-cstar:okMultiState:0.0.4'
     //核心：系统状态栏相关逻辑（沉浸式状态栏或地步导航栏）
     implementation 'io.github.uni-cstar:okSysBar:1.0.3'
 
