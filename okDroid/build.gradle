@@ -57,8 +57,8 @@ dependencies {
 
     /*核心：基础代码库*/
     //todo 临时改为compileOnly，后面改为api
-//    api(project(":okCore"))
-    compileOnly 'io.github.uni-cstar:okCore:0.0.3'
+    api(project(":okCore"))
+//    compileOnly 'io.github.uni-cstar:okCore:0.0.3'
 //    gradle.ext.depApiInert(this,'adapter-imageloader')
 //    debugApi project(path: ':adapter-imageloader')
 //    releaseApi(basDeps.adapterImageloader)
