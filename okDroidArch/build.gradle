@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 32
+        targetSdkVersion 22
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -55,7 +55,7 @@ dependencies {
 
 
     /*Kotlin*/
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.20"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20"
     /*
     * Kotlin-协程
     * https://github.com/hltj/kotlinx.coroutines-cn/blob/master/README.md#using-in-your-projects

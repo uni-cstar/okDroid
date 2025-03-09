@@ -2,8 +2,8 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
 
-    /*用于上传maven*/
-    id 'com.vanniktech.maven.publish'
+//    /*用于上传maven*/
+//    id 'com.vanniktech.maven.publish'
 }
 
 android {
