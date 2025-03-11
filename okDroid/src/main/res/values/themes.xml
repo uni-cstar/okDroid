@@ -10,6 +10,19 @@
 
     <style name="OkTheme" />
 
+    <style name="OkTheme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
     <style name="OkTheme.FullScreenDialog" parent="Theme.AppCompat.Dialog">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowIsFloating">false</item>
@@ -18,6 +31,8 @@
         <item name="android:backgroundDimEnabled">true</item>
         <item name="android:backgroundDimAmount">0.9</item>
     </style>
+
+
 
     <style name="OkTheme.WindowFadeAnim">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>

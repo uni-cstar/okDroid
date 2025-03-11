@@ -59,6 +59,10 @@ fun TextView.applyUnderLine() {
     this.paintFlags = this.paintFlags or Paint.UNDERLINE_TEXT_FLAG
 }
 
+fun TextView.removeUnderLine(){
+    this.paintFlags = this.paintFlags and Paint.UNDERLINE_TEXT_FLAG.inv()
+}
+
 /**
  * 文字加粗
  */
