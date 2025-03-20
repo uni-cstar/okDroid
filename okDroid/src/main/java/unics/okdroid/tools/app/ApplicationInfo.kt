@@ -66,27 +66,35 @@ fun <Value> Context.getMetaData(key: String, default: Value): Value {
         is Byte -> {
             metaData.getByte(key, default)
         }
+
         is Char -> {
             metaData.getChar(key, default)
         }
+
         is Int -> {
             metaData.getInt(key, default)
         }
+
         is Long -> {
             metaData.getLong(key, default)
         }
+
         is Float -> {
             metaData.getFloat(key, default)
         }
+
         is Double -> {
             metaData.getDouble(key, default)
         }
+
         is String -> {
             metaData.getString(key, default)
         }
+
         is Boolean -> {
             metaData.getBoolean(key, default)
         }
+
         else -> {
             throw IllegalArgumentException("只支持基础类型的获取")
         }
@@ -99,7 +107,7 @@ fun <Value> Context.getMetaData(key: String, default: Value): Value {
  * @param key     MetaData对应的Key
  * @return 如果没有获取成功(没有对应值，或者异常)，则返回值为空
  */
-inline fun Context.getMetaData(key: String): String? {
+fun Context.getMetaData(key: String): String? {
     val applicationInfo =
         packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
     return applicationInfo.metaData?.getString(key)
@@ -111,34 +119,44 @@ inline fun Context.getMetaData(key: String): String? {
  * @param channelKey 指定渠道Key
  * @return
  */
-inline fun Context.getChannelNo(channelKey: String): String? = getMetaData(channelKey)
+fun Context.getChannelNo(channelKey: String): String? = getMetaData(channelKey)
+
+private var versionName: String = ""
 
 /**
  * 获取程序版本名称
  * @return
  */
-inline fun Context.getVersionName(): String {
-    val packInfo = packageManager.getPackageInfo(packageName, 0)//0代表是获取版本信息
-    return packInfo.versionName
+fun Context.getVersionName(): String {
+    if (versionName.isEmpty()) {
+        val packInfo = packageManager.getPackageInfo(packageName, 0)//0代表是获取版本信息
+        versionName = packInfo.versionName
+    }
+    return versionName
 }
+
+private var versionCode: Long = -1
 
 /**
  * 获取版本号
  * @return
  */
-inline fun Context.getVersionCode(): Long {
-    val packInfo = packageManager.getPackageInfo(packageName, 0)
-    return if (Build.VERSION.SDK_INT >= 28) {
-        packInfo.longVersionCode
-    } else {
-        packInfo.versionCode.toLong()
+fun Context.getVersionCode(): Long {
+    if (versionCode == -1L) {
+        val packInfo = packageManager.getPackageInfo(packageName, 0)
+        versionCode = if (Build.VERSION.SDK_INT >= 28) {
+            packInfo.longVersionCode
+        } else {
+            packInfo.versionCode.toLong()
+        }
     }
+    return versionCode
 }
 
 /**
  * 获取应用程序名称
  */
-inline fun Context.getAppName(): String {
+fun Context.getAppName(): String {
     return try {
         val packageInfo = packageManager.getPackageInfo(packageName, 0)
         val labelRes = packageInfo.applicationInfo.labelRes
@@ -152,7 +170,7 @@ inline fun Context.getAppName(): String {
 /**
  * 获取程序第一次安装时间
  */
-inline fun Context.getFirstInstallTime(): Long {
+fun Context.getFirstInstallTime(): Long {
     val packInfo = packageManager.getPackageInfo(packageName, 0)//0代表是获取版本信息
     return packInfo.firstInstallTime
 }
@@ -160,7 +178,7 @@ inline fun Context.getFirstInstallTime(): Long {
 /**
  * 获取程序上次更新时间
  */
-inline fun Context.getLastUpdateTime(): Long {
+fun Context.getLastUpdateTime(): Long {
     val packInfo = packageManager.getPackageInfo(packageName, 0)//0代表是获取版本信息
     return packInfo.lastUpdateTime
 }
@@ -168,7 +186,7 @@ inline fun Context.getLastUpdateTime(): Long {
 /**
  * 获取目标版本
  */
-inline fun Context.getTargetSdkVersion(ctx: Context): Int {
+fun Context.getTargetSdkVersion(ctx: Context): Int {
     val packInfo = ctx.packageManager.getPackageInfo(ctx.packageName, 0)
     return packInfo.applicationInfo.targetSdkVersion
 }
