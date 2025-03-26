@@ -95,7 +95,6 @@ fun UserUi.registerViewModelEventsWhenStarted(viewModel: ViewModelArch) {
 
 fun UserUi.registerViewModelEventsWhenResumed(viewModel: ViewModelArch) {
     val ui = this
-
     preferredLifeCycleOwner.lifecycleScope.launchWhenResumed {
         viewModel.eventUiState.collectLatest {
             it.firstOrNull()?.resolve(ui)
